@@ -1,15 +1,22 @@
-export const MASTER_PASSWORD = "secret_sauce";
+export const STANDARD_USER = "standard_user";
+export const LOCKED_OUT_USER = "locked_out_user";
+export const PROBLEM_USER = "problem_user";
+export const ERROR_USER = "error_user";
+export const VISUAL_USER = "visual_user";
+export const PERFORMANCE_GLITCH_USER = "performance_glitch_user";
+
+const MASTER_PASSWORD = "secret_sauce";
 
 export const invalidLoginData = [
   {
     testName: "Login by locked out user",
-    username: "locked_out_user",
+    username: LOCKED_OUT_USER,
     password: MASTER_PASSWORD,
     error: "Epic sadface: Sorry, this user has been locked out.",
   },
   {
     testName: "Login with incorrect password",
-    username: "standard_user",
+    username: STANDARD_USER,
     password: "incorrectPsw",
     error:
       "Epic sadface: Username and password do not match any user in this service",
@@ -29,7 +36,7 @@ export const invalidLoginData = [
   },
   {
     testName: "Login with empty password",
-    username: "standard_user",
+    username: STANDARD_USER,
     password: "",
     error: "Epic sadface: Password is required",
   },
@@ -38,39 +45,28 @@ export const invalidLoginData = [
 export const validLoginData = [
   {
     testName: "Login by standard user",
-    username: "standard_user",
+    username: STANDARD_USER,
     password: MASTER_PASSWORD,
   },
   {
     testName: "Login by problem user",
-    username: "problem_user",
+    username: PROBLEM_USER,
     password: MASTER_PASSWORD,
   },
   {
     testName: "Login by error user",
-    username: "error_user",
+    username: ERROR_USER,
     password: MASTER_PASSWORD,
   },
   {
     testName: "Login by visual user",
-    username: "visual_user",
+    username: VISUAL_USER,
     password: MASTER_PASSWORD,
   },
   {
     testName: "Login by user with performance problems",
-    username: "performance_glitch_user",
+    username: PERFORMANCE_GLITCH_USER,
     password: MASTER_PASSWORD,
     timeout: 8000,
   },
 ];
-
-export const usersForAddRemoveInventory = {
-  standard: {
-    username: "standard_user",
-    password: MASTER_PASSWORD,
-  },
-  error: {
-    username: "error_user",
-    password: MASTER_PASSWORD,
-  },
-};
